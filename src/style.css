@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Rubik-SemiBold";
+  src: url(../fonts/Rubik-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url(../fonts/Rubik-Medium.ttf);
+}
+
+.header {
+  font-family: Rubik-SemiBold;
+  color: white;
+}
+
+form {
+  display: flex;
+}
+
+#ip-search {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-style: none;
+  width: 25vw;
+  height: 7vh;
+}
+
+li {
+  font-family: Rubik;
+  font-size: 0.8em;
+  list-style: none;
+  color: hsl(0, 0%, 59%);
+}
+
+.infos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.headernsearch {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+.conatainer {
+  position: relative;
+  display: inline-block;
+}
+.informations {
+  background-color: white;
+  height: 17vh;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 3.6em;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10em;
+}
+
+#map {
+  width: 100%;
+  height: 330px;
+  z-index: 1;
+}
+
+.submit-button {
+  width: 2.5vw;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-style: none;
+  background-color: black;
+  color: white;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
