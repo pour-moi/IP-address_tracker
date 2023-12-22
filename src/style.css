@@ -16,6 +16,10 @@ body {
   font-family: "Rubik-Regular";
   src: url(../fonts/Rubik-Regular.ttf);
 }
+@font-face {
+  font-family: "Rubik-Bold";
+  src: url(../fonts/Rubik-Bold.ttf);
+}
 
 .header {
   font-family: Rubik-SemiBold;
@@ -27,8 +31,8 @@ form {
 }
 
 #ip-search {
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
   border-style: none;
   width: 25vw;
   height: 7vh;
@@ -39,6 +43,10 @@ li {
   font-size: 0.8em;
   list-style: none;
   color: hsl(0, 0%, 59%);
+}
+
+.details {
+  display: flex;
 }
 
 .infos {
@@ -62,7 +70,7 @@ li {
 .informations {
   background-color: white;
   height: 17vh;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   margin-top: 3.6em;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
@@ -70,7 +78,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 10em;
+  gap: 5em;
 }
 
 .arrow {
@@ -115,4 +123,24 @@ input::placeholder {
 
 input {
   font-size: 18px;
+}
+
+.vertical-line {
+  border-left: 1px solid hsl(0, 0%, 59%);
+  height: 40px;
+}
+.ip-addr,
+.location,
+.timezone {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-family: Rubik-Bold;
+}
+
+.isp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Rubik-Bold;
 }
