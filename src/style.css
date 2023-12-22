@@ -12,6 +12,11 @@ body {
   src: url(../fonts/Rubik-Medium.ttf);
 }
 
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url(../fonts/Rubik-Regular.ttf);
+}
+
 .header {
   font-family: Rubik-SemiBold;
   color: white;
@@ -68,6 +73,10 @@ li {
   gap: 10em;
 }
 
+.arrow {
+  height: 0.8em;
+}
+
 #map {
   width: 100%;
   height: 330px;
@@ -75,7 +84,7 @@ li {
 }
 
 .submit-button {
-  width: 2.5vw;
+  width: 3vw;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   border-style: none;
@@ -88,4 +97,22 @@ li {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*input*/
+input::placeholder,
+input {
+  padding-left: 0.7em;
+  font-family: Rubik-Regular;
+}
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 0.8em;
+}
+
+input {
+  font-size: 18px;
 }
