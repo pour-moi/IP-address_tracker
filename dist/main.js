@@ -120,13 +120,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/ipfy.js":
+/*!*********************!*\
+  !*** ./src/ipfy.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getinfo: () => (/* binding */ getinfo)\n/* harmony export */ });\n// document.querySelector(\".submit-button\").addEventListener(\"click\", getinfo);\r\n\r\n// const apiKey = \"at_nXOIDBVFLRRPSwZV2XDftqnbcPt8z\";\r\n// const ipaddress = \"196.188.245.83\";\r\nconst apiUrl = `https://geo.ipify.org/api/v2/country?apiKey=at_nXOIDBVFLRRPSwZV2XDftqnbcPt8z&ipAddress=196.188.245.83`;\r\n\r\nasync function getinfo() {\r\n  try {\r\n    const response = await fetch(apiUrl());\r\n    const data = await response.json();\r\n\r\n    const addr = document.querySelector(\".addr\");\r\n    const tz = document.querySelector(\".tz\");\r\n    const locate = document.querySelector(\".locate\");\r\n    const intsp = document.querySelector(\".intsp\");\r\n\r\n    addr.textContent = data.ip;\r\n    tz.textContent = data.timezone;\r\n    locate.textContent = data.location;\r\n    intsp.textContent = data.isp;\r\n  } catch (error) {}\r\n}\r\ngetinfo();\r\n\n\n//# sourceURL=webpack://ip-address_tracker/./src/ipfy.js?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\nconst map = L.map(\"map\");\r\nmap.setView([51.505, -0.09], 13);\r\n\r\nL.tileLayer(\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\", {\r\n  maxZoom: 19,\r\n  attribution: \"© OpenStreetMap\",\r\n}).addTo(map);\r\n\r\nlet marker, circle, zoomed;\r\n\r\nnavigator.geolocation.watchPosition(success, error);\r\n\r\nfunction success(pos) {\r\n  const lat = pos.coords.latitude;\r\n  const lng = pos.coords.longitude;\r\n  const accuracy = pos.coords.accuracy;\r\n\r\n  if (marker) {\r\n    map.removeLayer(marker);\r\n    map.removeLayer(circle);\r\n  }\r\n  // Removes any existing marker and circule (new ones about to be set)\r\n\r\n  marker = L.marker([lat, lng]).addTo(map);\r\n  circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);\r\n  // Adds marker to the map and a circle for accuracy\r\n\r\n  if (!zoomed) {\r\n    zoomed = map.fitBounds(circle.getBounds());\r\n  }\r\n  // Set zoom to boundaries of accuracy circle\r\n\r\n  map.setView([lat, lng]);\r\n  // Set map focus to current user position\r\n}\r\n\r\nfunction error(err) {\r\n  if (err.code === 1) {\r\n    alert(\"Please allow geolocation access\");\r\n  } else {\r\n    alert(\"Cannot get current location\");\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack://ip-address_tracker/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _ipfy_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ipfy.js */ \"./src/ipfy.js\");\n\r\n\r\n\r\n(0,_ipfy_js__WEBPACK_IMPORTED_MODULE_1__.getinfo)();\r\n// const map = L.map(\"map\");\r\n// map.setView([51.505, -0.09], 13);\r\n\r\n// L.tileLayer(\"https://tile.openstreetmap.org/{z}/{x}/{y}.png\", {\r\n//   maxZoom: 19,\r\n//   attribution: \"© OpenStreetMap\",\r\n// }).addTo(map);\r\n\r\n// let marker, circle, zoomed;\r\n\r\n// navigator.geolocation.watchPosition(success, error);\r\n\r\n// function success(pos) {\r\n//   const lat = pos.coords.latitude;\r\n//   const lng = pos.coords.longitude;\r\n//   const accuracy = pos.coords.accuracy;\r\n\r\n//   if (marker) {\r\n//     map.removeLayer(marker);\r\n//     map.removeLayer(circle);\r\n//   }\r\n//   // Removes any existing marker and circule (new ones about to be set)\r\n\r\n//   marker = L.marker([lat, lng]).addTo(map);\r\n//   circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);\r\n//   // Adds marker to the map and a circle for accuracy\r\n\r\n//   if (!zoomed) {\r\n//     zoomed = map.fitBounds(circle.getBounds());\r\n//   }\r\n//   // Set zoom to boundaries of accuracy circle\r\n\r\n//   map.setView([lat, lng]);\r\n//   // Set map focus to current user position\r\n// }\r\n\r\n// function error(err) {\r\n//   if (err.code === 1) {\r\n//     alert(\"Please allow geolocation access\");\r\n//   } else {\r\n//     alert(\"Cannot get current location\");\r\n//   }\r\n// }\r\n\n\n//# sourceURL=webpack://ip-address_tracker/./src/main.js?");
 
 /***/ }),
 
